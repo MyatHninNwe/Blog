@@ -12,6 +12,7 @@ use App\Models\Student;
 use App\Models\Department;
 use App\Models\Subject;
 use App\Models\Ateam;
+use App\Models\Upload;
 
 
 
