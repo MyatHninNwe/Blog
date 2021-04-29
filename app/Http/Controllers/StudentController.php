@@ -63,9 +63,12 @@ class StudentController extends Controller
         ]);
 
         $name=$request->name;
-        $file=$request->file("photos");
-        $upload=time().'-'.$file->getClientOriginal();
-        $file->move(public_path('image'),$upload);
+        
+        $imageName = time() . '.' . $request->photos->extension();
+
+
+
+        $request->photos->move(public_path('image'), $imageName);
         $age=$request->age;
         $address=$request->address;
         $f_name=$request->f_name;
@@ -75,7 +78,7 @@ class StudentController extends Controller
 
         $table = new Student;
         $table ->name = $name;
-        $table ->photos = $upload;
+        $table ->photos = $imageName;
         $table ->age = $age;
         $table ->address = $address;
         $table ->f_name = $f_name;

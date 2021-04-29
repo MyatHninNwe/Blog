@@ -2,14 +2,12 @@
 @section('title','Home')
 
 @section('content')
-    <div class="container p-3">
-         @if(session('success'))
-            <div>
-                <h4>Data Inserted Successfully</h4>
-            </div>
-        @endif
-
-            <form method="POST" action="{{route('stu_store') }}" enctype="multipart/form-data" class="container foom">
+    @if (session('success'))
+  <div class="text-center alert alert-success" role="alert">
+    <h5>အောင်မြင်စွာ သင့်၏ postကို တင်ပြီးပါပြီ။</h5>
+  </div>
+ @endif
+<form method="POST" action="{{route('stu_store') }}" enctype="multipart/form-data" class="container foom">
             @csrf
 
                 <div>

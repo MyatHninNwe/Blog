@@ -47,8 +47,9 @@ Auth::routes();
 
 //WebApplication Student
 Route::get('stu_index',[StudentController::class,'index'])->name('stu_index');
-Route::post('stu_create',[StudentController::class,'store'])->name('stu_store');
 Route::get('stu_create',[StudentController::class,'create'])->name('stu_create');
+Route::post('stu_create',[StudentController::class,'store'])->name('stu_store');
+
 
 
 
